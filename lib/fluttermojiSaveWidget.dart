@@ -31,7 +31,6 @@ class FluttermojiSaveWidget extends StatelessWidget {
   ///
   /// Note: This expects the controller to be added to `Get`
   /// previously during runtime.
-  final fluttermojiController = Get.find<FluttermojiController>();
 
   final InteractiveInkFeatureFactory? splashFactory;
 
@@ -53,7 +52,7 @@ class FluttermojiSaveWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.lazyPut(() => FluttermojiController());
+    FluttermojiController fluttermojiController = Get.put(FluttermojiController());
     return InkWell(
       onTap: () async {
         await fluttermojiController.setFluttermoji();
